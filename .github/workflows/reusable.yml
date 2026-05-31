@@ -2,6 +2,11 @@ name: Reusable Workflow
 
 on:
   workflow_call:
+    inputs:
+      name:
+        description: "Enter the name"
+        required: true
+        type: string
 
 jobs:
   greeting:
@@ -9,4 +14,4 @@ jobs:
 
     steps:
       - name: Say Hello
-        run: echo "Hello from reusable workflow"
+        run: echo "Hi ${{ inputs.name }}. Welcome to reusable workflow"
